@@ -4,7 +4,6 @@ import "firebase/compat/firestore";
 import "../components/fire";
 import classes from "../styles/Home.module.css"
 
-
 const db = firebase.firestore();
 
 export default function Home() {
@@ -173,7 +172,7 @@ export default function Home() {
 
               setData2(mydata2); //mydataをdataに代入
               setMessage(
-                "質問などあればお書きください" 
+                "質問などあればお書きください" + mydata.length + mydata2.length
               );
             
         }; //forEach(document)
