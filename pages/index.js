@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "../components/fire";
@@ -19,6 +19,7 @@ export default function Home() {
   const [replyText, setReplyText] = useState("");
   const [replyId, setReplyId] = useState("");
   const [flag, setFlag] = useState(false);
+  const [num, setNum] = useState(0);
   const [replyFlag, setReplyFlag] = useState(false);
 
   const onChangeName = (e) => {
@@ -169,14 +170,15 @@ export default function Home() {
               }); //forEach(document2)
 
               setData(mydata); //mydataをdataに代入
-
               setData2(mydata2); //mydataをdataに代入
               setMessage(
-                "質問などあればお書きください" + mydata.length + mydata2.length
+                "質問などあればお書きください"
               );
-            
+              setNum((prev) => prev + 1)
+
         }; //forEach(document)
       }); //snapshot
+      
   }, [flag]);
 
   return (
