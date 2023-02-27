@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "../components/fire";
+import classes from "../styles/Home.module.css"
+
 
 const db = firebase.firestore();
 
@@ -171,7 +173,7 @@ export default function Home() {
 
               setData2(mydata2); //mydataをdataに代入
               setMessage(
-                "質問などあればお書きください" + mydata.length + mydata2.length
+                "質問などあればお書きください" 
               );
             
         }; //forEach(document)
@@ -180,7 +182,7 @@ export default function Home() {
 
   return (
     <div>
-      <h3>C0de Web班掲示板 {message}</h3>
+      <h2 className={classes.title}>C0de Web班掲示板 {message}</h2>
 
       <table>
         <thead>

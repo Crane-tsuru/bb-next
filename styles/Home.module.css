@@ -7,11 +7,15 @@
   min-height: 100vh;
 }
 
+.title {
+  font-size: 3em;
+    color:darkblue
+}
 .description {
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
-  font-size: 0.85rem;
+  font-size: 3em;
   max-width: var(--max-width);
   width: 100%;
   z-index: 2;
@@ -47,6 +51,7 @@
 }
 
 .card {
+  
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 0);
