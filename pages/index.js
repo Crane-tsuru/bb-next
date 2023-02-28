@@ -1,7 +1,8 @@
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "../components/fire";
+import Head from "next/head";
 import classes from "../styles/Home.module.css"
 
 const db = firebase.firestore();
@@ -183,6 +184,10 @@ export default function Home() {
 
   return (
     <div>
+      <Head>
+        <title>C0deWeb班掲示板</title>
+        <meta name="description" content="名工大プログラミング部C0deのWeb班が制作した質問掲示板です。"  />
+      </Head>
       <h2 className={classes.title}>C0de Web班掲示板 {message}</h2>
 
       <table>
