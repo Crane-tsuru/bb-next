@@ -66,14 +66,14 @@ export default function Home() {
       id.update({
         reply: false,
       }).then(() => {
-        setReplyFlag(!replyFlag);
+        setReplyFlag(false);
         setFlag(!flag);
       });
     } else {
       id.update({
         reply: true,
       }).then(() => {
-        setReplyFlag(!replyFlag);
+        setReplyFlag(true);
         setFlag(!flag);
       });
     }
@@ -115,7 +115,10 @@ export default function Home() {
           const doc = document.data(); //docにフィールドの情報がまとめられたオブジェクトを代入
 
           if (replyBotton) {
-            if (doc.reply) replyBotton = false; //replyフィールドがtrueだったら次の投稿からmydata2にpush
+            if (doc.reply) {
+              replyBotton = false; //replyフィールドがtrueだったら次の投稿からmydata2にpush
+              doc.id.update({reply: false})
+            }
             mydata.push(
               <div>
                 <div>
