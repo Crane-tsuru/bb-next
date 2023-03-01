@@ -10,7 +10,7 @@ export default function Blog({ blog }) {
       <ul>
         {blog.map((blog) => (
           <li key={blog.id}>
-            <Link href={`/blog/${blog.id}`}>{blog.title}</Link>
+            <Link href={`/blog/${blog.id}`}>{blog.title}</Link>　{new Date(blog.publishedAt).toLocaleDateString()}
           </li>
         ))}
       </ul>

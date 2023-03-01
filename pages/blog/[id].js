@@ -1,11 +1,15 @@
+import Link from 'next/link';
 import { client } from '../../libs/client';
 import styles from '../../components/Blog.module.scss';
 
 export default function BlogId({ blog }) {
   return (
     <main className={styles.main}>
+        <Link href="/blog">
+        戻る
+      </Link>
       <h1 className={styles.title}>{blog.title}</h1>
-      <p className={styles.publishedAt}>{blog.publishedAt}</p>
+      <p className={styles.publishedAt}>{new Date(blog.publishedAt).toLocaleDateString()}</p>
       <div
         dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
