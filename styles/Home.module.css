@@ -11,6 +11,10 @@
   font-size: 3em;
     color:darkblue
 }
+
+.textarea {
+  vertical-align: middle;
+}
 .description {
   display: inherit;
   justify-content: inherit;
