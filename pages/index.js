@@ -3,6 +3,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "../components/fire";
 import Head from "next/head";
+import Link from 'next/link';
 import classes from "../styles/Home.module.css"
 
 const db = firebase.firestore();
@@ -38,20 +39,25 @@ export default function Home() {
 
   //Firebaseに投稿文を追加.その後useEffect起動
   const addText = (e) => {
-    const ob = {
-      name: name,
-      text: text,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      id: db.collection("mydata").doc(),
-      reply: false,
-    };
-
-    ob.id.set(ob).then(() => {     
-      setName(""); //テキストボックスをクリア
-      setText("");
-      setFlag(!flag);
-      setMessage("投稿しました");
-    });
+    if (name.length === 0 || text.length === 0) {
+      setMessage(
+        "未入力エラーです"
+      );
+    } else {
+      const ob = {
+        name: name,
+        text: text,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        id: db.collection("mydata").doc(),
+        reply: false,
+      };
+  
+      ob.id.set(ob).then(() => {     
+        setText("");//テキストボックスをクリア
+        setFlag(!flag);
+        setMessage("投稿しました");
+      });
+    }
   };
 
   //返信ボタンが押されたらreplyフィールドを反転、idを保存.その後useEffect起動
@@ -87,8 +93,7 @@ export default function Home() {
       .collection("replyText")
       .add(ob) 
       .then(() => {
-        setReplyName(""); //テキストボックスをクリア
-        setReplyText("");
+        setReplyText("");//テキストボックスをクリア
         setFlag(!flag);
         setMessage("返信しました");
       });
@@ -189,6 +194,9 @@ export default function Home() {
         <meta name="description" content="名工大プログラミング部C0deのWeb班が制作した質問掲示板です。"  />
       </Head>
       <h2 className={classes.title}>C0de Web班掲示板 {message}</h2>
+      <Link href="/blog">
+        Web班のブログへ
+      </Link>
 
       <table>
         <thead>
@@ -199,21 +207,17 @@ export default function Home() {
       {replyFlag && (
         <div>
           <p>
-            お名前
+            お名前　
             <input
               type="text"
               value={replyName}
-              maxLength="12"
+              maxLength="20"
               onChange={onChangeReplyName}
             />
           </p>
           <p>
-            返信内容
-            <input
-              type="textarea"
-              value={replyText}
-              onChange={onChangeReplyText}
-            />
+            返信内容　
+            <textarea className={classes.textarea} value={text} onChange={onChangeReplyText} rows="4" cols="50" maxLength="400"/>
           </p>
           <button onClick={addReplyText}>返信する</button>
         </div>
@@ -226,17 +230,17 @@ export default function Home() {
       </table>
 
       <p>
-        お名前
+        お名前　
         <input
           type="text"
           value={name}
-          maxLength="12"
+          maxLength="20"
           onChange={onChangeName}
         />
       </p>
       <p>
-        このスレッドに書き込む
-        <input type="textarea" value={text} onChange={onChangeText} />
+        投稿内容　
+        <textarea className={classes.textarea} value={text} onChange={onChangeText} rows="4" cols="50" maxLength="400"/>
       </p>
       <button onClick={addText}>投稿する</button>
     </div>
