@@ -49,7 +49,7 @@ export default function Home() {
         text: text,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         id: db.collection("mydata").doc(),
-        index: addIndex,
+        index: addIndex + 1,
       };
 
       ob.id.set(ob).then(() => {
