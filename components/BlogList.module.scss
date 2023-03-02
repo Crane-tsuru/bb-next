@@ -1,0 +1,31 @@
+.link {
+    color:blue;
+    font-size: 1.8em;
+}
+
+.card {
+  
+    padding: 1rem 1.2rem;
+    border-radius: var(--border-radius);
+    background: rgba(var(--card-rgb), 0);
+    border: 1px solid rgba(var(--card-border-rgb), 0);
+    transition: background 200ms, border 200ms;
+  }
+
+/* Mobile */
+@media (max-width: 700px) {
+    .content {
+      padding: 4rem;
+    }
+  
+    .grid {
+      grid-template-columns: 1fr;
+      margin-bottom: 120px;
+      max-width: 320px;
+      text-align: center;
+    }
+  
+    .card {
+      padding: 1rem 2.5rem;
+    }
+}

@@ -1,20 +1,25 @@
+import Head from "next/head";
 import Link from 'next/link';
 import { client } from '../../libs/client';
-import styles from '../../components/Blog.module.scss';
+import classes from '../../components/Blog.module.scss';
 
 export default function BlogId({ blog }) {
   return (
-    <main className={styles.main}>
-        <Link href="/blog">
+    <main className={classes.main}>
+      <Head>
+        <title>{blog.title}</title>
+        <meta name="description" content="名工大プログラミング部C0deのWeb班のブログです。"  />
+      </Head>
+        <Link className={classes.link} href="/blog">
         戻る
       </Link>
-      <h1 className={styles.title}>{blog.title}</h1>
-      <p className={styles.publishedAt}>{new Date(blog.publishedAt).toLocaleDateString()}</p>
+      <h1 className={classes.title}>{blog.title}</h1>
+      <p className={classes.publishedAt}>{new Date(blog.publishedAt).toLocaleDateString()}</p>
       <div
         dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
         }}
-        className={styles.post}
+        className={classes.post}
       />
     </main>
   );
