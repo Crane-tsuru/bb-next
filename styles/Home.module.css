@@ -12,6 +12,11 @@
     color:darkblue
 }
 
+.link {
+  color:blue;
+  font-size: 1.8em;
+}
+
 .textarea {
   vertical-align: middle;
 }
