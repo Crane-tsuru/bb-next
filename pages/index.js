@@ -204,7 +204,7 @@ export default function Home() {
             返信内容　
             <textarea
               className={classes.textarea}
-              value={text}
+              value={replyText}
               onChange={onChangeReplyText}
               rows="4"
               cols="50"
