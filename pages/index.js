@@ -17,6 +17,7 @@ export default function Home() {
   const [message, setMessage] = useState("");
   const [name, setName] = useState("");
   const [text, setText] = useState("");
+  const [addIndex, setAddIndex] = useState(0);
   const [count, setCount] = useState(0);
   const [replyName, setReplyName] = useState("");
   const [replyText, setReplyText] = useState("");
@@ -48,7 +49,7 @@ export default function Home() {
         text: text,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         id: db.collection("mydata").doc(),
-        index: index,
+        index: addIndex,
       };
 
       ob.id.set(ob).then(() => {
@@ -122,6 +123,9 @@ export default function Home() {
               <div>{doc.text}</div>
             </div>
           );
+          if (!replyArray[index]) {
+            replyArray[index] = 0;
+          }
 
           //replyTextコレクションのドキュメント(返信内容)を取得.投稿時間で昇順にソート.
           const snapshot2 = await doc.id
@@ -142,14 +146,15 @@ export default function Home() {
               </div>
             );
 
-            if (replyArray[index]) {
+            if (replyArray[index]) { //replyArray[index]>=1の場合
               replyArray[index] += 1;
-            } else {
+            } else { //replyArray[index]===0の場合
               replyArray[index] = 1;
             }
           }); //forEach(document2)
 
           setData(mydata); //mydataをdataに代入
+          setAddIndex(index);
           setMessage("質問などあればお書きください");
           setNum((prev) => prev + 1);
         } //forEach(document)
