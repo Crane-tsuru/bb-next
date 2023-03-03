@@ -80,21 +80,25 @@ export default function Home() {
 
   //Firebaseに返信文を追加
   const addReplyText = (e) => {
-    const ob = {
-      name: replyName,
-      text: replyText,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      id: replyId,
-    };
+    if (name.length === 0 || text.length === 0) {
+      setMessage("未入力エラーです");
+    } else {
+      const ob = {
+        name: replyName,
+        text: replyText,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        id: replyId,
+      };
 
-    ob.id
-      .collection("replyText")
-      .add(ob)
-      .then(() => {
-        setReplyText(""); //テキストボックスをクリア
-        setFlag(!flag);
-        setMessage("返信しました");
-      });
+      ob.id
+        .collection("replyText")
+        .add(ob)
+        .then(() => {
+          setReplyText(""); //テキストボックスをクリア
+          setFlag(!flag);
+          setMessage("返信しました");
+        });
+    }
   };
 
   //初回とflagが変わったときに実行（表示の更新）
@@ -148,7 +152,7 @@ export default function Home() {
 
             if (replyArray[index]) { //replyArray[index]>=1の場合
               replyArray[index] += 1;
-            } else { //replyArray[index]===0の場合
+            } else { //replyArray[index]===0の場合            
               replyArray[index] = 1;
             }
           }); //forEach(document2)
