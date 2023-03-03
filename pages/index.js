@@ -174,10 +174,10 @@ export default function Home() {
           content="名工大プログラミング部C0deのWeb班が制作した質問掲示板です。"
         />
       </Head>
-      <h2 className={classes.title}>C0de Web班掲示板 {message}</h2>
       <Link className={classes.link} href="/blog">
         Web班のブログへ
       </Link>
+      <h2 className={classes.title}>C0de Web班掲示板 {message}</h2>
 
       {replyFlag ? (
         <table>
