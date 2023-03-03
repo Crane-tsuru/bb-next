@@ -169,10 +169,12 @@ export default function Home() {
     <div>
       <Head>
         <title>C0deWeb班掲示板</title>
+        
         <meta
           name="description"
           content="名工大プログラミング部C0deのWeb班が制作した質問掲示板です。"
         />
+        <meta name="google-site-verification" content="HU9359Egr_Y0kN-unK33sVKLYf1Ht5qwdVkh_ls5sRw" />
       </Head>
       <Link className={classes.link} href="/blog">
         Web班のブログへ
