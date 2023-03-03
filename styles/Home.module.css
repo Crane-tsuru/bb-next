@@ -6,15 +6,32 @@
   padding: 6rem;
   min-height: 100vh;
 }
+.margin {
+  margin: 10px;
+}
 
 .title {
   font-size: 3em;
     color:darkblue
 }
 
+.titleBox {
+  background-color: rgb(243, 221, 100);
+  padding: 10px;
+}
+
+.message {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
 .link {
   color:blue;
   font-size: 1.8em;
+}
+
+.link:hover {
+  text-decoration: underline;
 }
 
 .textarea {
