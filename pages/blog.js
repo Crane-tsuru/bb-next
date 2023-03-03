@@ -13,6 +13,7 @@ export default function Blog({ blog }) {
         <Link className={classes.link} href="/">
         掲示板へ
       </Link>
+      <h1>Web班のブログ</h1>
       <ul>
         {blog.map((blog) => (
           <li key={blog.id}>
