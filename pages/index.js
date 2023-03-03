@@ -166,7 +166,7 @@ export default function Home() {
   }, [flag]);
 
   return (
-    <div>
+    <div >
       <Head>
         <title>C0deWeb班掲示板</title>
         
@@ -176,11 +176,14 @@ export default function Home() {
         />
         <meta name="google-site-verification" content="HU9359Egr_Y0kN-unK33sVKLYf1Ht5qwdVkh_ls5sRw" />
       </Head>
+      <div className={classes.titleBox}>
       <Link className={classes.link} href="/blog">
         Web班のブログへ
       </Link>
-      <h2 className={classes.title}>C0de Web班掲示板 {message}</h2>
-
+      <h2 className={classes.title}>C0de Web班掲示板 </h2>
+      </div>
+      <div className={classes.margin}>
+      <p className={classes.message}>{message}</p>
       {replyFlag ? (
         <table>
           <thead>
@@ -248,6 +251,7 @@ export default function Home() {
         />
       </p>
       <button onClick={addText}>投稿する</button>
+    </div>
     </div>
   );
 }

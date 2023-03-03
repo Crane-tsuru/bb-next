@@ -5,20 +5,23 @@ import classes from '../components/BlogList.module.scss';
 
 export default function Blog({ blog }) {
   return (
-    <div className={classes.main}>
+    <div >
        <Head>
         <title>Web班のブログ</title>
         <meta name="description" content="名工大プログラミング部C0deのWeb班のブログです。"  />
       </Head>
+      <div className={classes.titleBox}>
         <Link className={classes.link} href="/">
         掲示板へ
       </Link>
-      <h1>Web班のブログ</h1>
-      <ul>
+      <h1 className={classes.title}>Web班のブログ</h1>
+      </div>
+      <ul className={classes.main}>
         {blog.map((blog) => (
           <li key={blog.id}>
             <div className={classes.card}>
-            <Link className={classes.link} href={`/blog/${blog.id}`}>{blog.title}</Link>　{new Date(blog.publishedAt).toLocaleDateString()}
+            <Link className={classes.link} href={`/blog/${blog.id}`}>{blog.title}</Link>　
+            <span className={classes.date}>{new Date(blog.publishedAt).toLocaleDateString()}</span>
             </div>
           </li>
         ))}
