@@ -168,7 +168,7 @@ export default function Home() {
   return (
     <div >
       <Head>
-        <title>C0deWeb班掲示板</title>
+        <title>C0de 掲示板</title>
         
         <meta
           name="description"
@@ -180,7 +180,7 @@ export default function Home() {
       <Link className={classes.link} href="/blog">
         Web班のブログへ
       </Link>
-      <h2 className={classes.title}>C0de Web班掲示板 </h2>
+      <h2 className={classes.title}>C0de 掲示板 </h2>
       </div>
       <div className={classes.margin}>
       <p className={classes.message}>{message}</p>
