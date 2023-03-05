@@ -25,6 +25,12 @@
   margin-bottom: 10px;
 }
 
+@media (max-width: 430px) {
+  .message {
+      font-size: 1.5em; 
+    }
+}
+
 .link {
   color:blue;
   font-size: 1.7em;
