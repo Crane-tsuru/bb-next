@@ -1,13 +1,23 @@
+
+.margin {
+  min-height: 100vh;
+  background-color: white;
+
+}
 .main {
-  margin: 10px;
+  padding: 10px;
+  list-style: none;
+  min-height: 100vh;
 }
  .title {
   font-size: 2.5em;
   color:darkblue;
+  
  }
 .titleBox {
   background-color: rgb(243, 221, 100);
   padding: 10px;
+  text-align: center;
 }
 
 .link {
@@ -31,6 +41,21 @@
 .date {
   vertical-align: middle;
   font-size: 1.2em;
+}
+@media (min-width: 610px) {
+  .margin {
+    margin: 0px;
+    min-height: 100vh;
+    background-color: rgb(228, 238, 238);
+  }
+
+    .main {
+      width: 70%;
+      margin: 0 auto;
+      padding: 10px;
+      background-color: white;
+      min-height: 100vh;
+    } 
 }
 /* Mobile */
 @media (max-width: 700px) {

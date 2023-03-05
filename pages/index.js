@@ -116,7 +116,7 @@ export default function Home() {
           index += 1;
 
           mydata.push(
-            <div>
+            <div className={classes.post}>
               <div>
                 名前:{doc.name}　
                 {new Date(doc.timestamp?.toDate()).toLocaleString()}　
@@ -183,6 +183,8 @@ export default function Home() {
       <h2 className={classes.title}>C0de 掲示板 </h2>
       </div>
       <div className={classes.margin}>
+      
+      <div className={classes.postarea}>
       <p className={classes.message}>{message}</p>
       {replyFlag ? (
         <table>
@@ -251,6 +253,7 @@ export default function Home() {
         />
       </p>
       <button onClick={addText}>投稿する</button>
+      </div>
     </div>
     </div>
   );
