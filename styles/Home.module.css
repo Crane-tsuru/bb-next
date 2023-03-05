@@ -6,34 +6,60 @@
   padding: 6rem;
   min-height: 100vh;
 }
+
 .margin {
+  min-height: 100vh;
+  background-color: white;
   margin: 10px;
 }
 
 .title {
   font-size: 3em;
-    color:darkblue
+    color:darkblue;
+    
 }
 
 .titleBox {
   background-color: rgb(243, 221, 100);
   padding: 10px;
+  text-align: center;
 }
 
 .message {
-  font-size: 1.8em;
+  font-size: 1.5em;
   margin-bottom: 10px;
 }
 
-@media (max-width: 430px) {
+
+
+.post {
+  margin: 10px;
+}
+
+@media (min-width: 610px) {
+  .margin {
+    margin: 0px;
+    min-height: 100vh;
+    background-color: rgb(228, 238, 238);
+  }
+  
   .message {
-      font-size: 1.5em; 
+      font-size: 1.8em; 
     }
+
+    .postarea {
+      width: 70%;
+      margin: 0 auto;
+      padding: 10px;
+      background-color: white;
+      min-height: 100vh;
+    } 
 }
 
 .link {
   color:blue;
   font-size: 1.7em;
+  text-align: center;
 }
 
 .link:hover {
