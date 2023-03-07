@@ -116,7 +116,7 @@ export default function Home() {
           index += 1;
 
           mydata.push(
-            <div className={classes.post}>
+            <div  className={classes.post}>
               <div>
                 名前:{doc.name}　
                 {new Date(doc.timestamp?.toDate()).toLocaleString()}　
@@ -141,7 +141,7 @@ export default function Home() {
             const doc2 = document2.data();
 
             mydata.push(
-              <div>
+              <div className={classes.post}>
                 <div>
                   ＞＞名前:{doc2.name}　
                   {new Date(doc2.timestamp?.toDate()).toLocaleString()}　

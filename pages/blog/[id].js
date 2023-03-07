@@ -5,15 +5,19 @@ import classes from '../../components/Blog.module.scss';
 
 export default function BlogId({ blog }) {
   return (
-    <main className={classes.main}>
+    <main className={classes.margin}>
       <Head>
         <title>{blog.title}</title>
         <meta name="description" content="名工大プログラミング部C0deのWeb班のブログです。"  />
       </Head>
+      <div className={classes.titleBox}>
         <Link className={classes.link} href="/blog">
         戻る
       </Link>
-      <h1 className={classes.title}>{blog.title}</h1>
+      <h1 className={classes.title}>Web班のブログ</h1>
+      </div>
+      <div className={classes.main}>
+      <h1 className={classes.blogtitle}>{blog.title}</h1>
       <p className={classes.publishedAt}>{new Date(blog.publishedAt).toLocaleDateString()}</p>
       <div
         dangerouslySetInnerHTML={{
@@ -21,6 +25,7 @@ export default function BlogId({ blog }) {
         }}
         className={classes.post}
       />
+      </div>
     </main>
   );
 }

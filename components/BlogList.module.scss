@@ -1,9 +1,9 @@
-
 .margin {
   min-height: 100vh;
   background-color: white;
 
 }
+
 .main {
   padding: 10px;
   list-style: none;
@@ -30,7 +30,6 @@
 }
 
 .card {
-  
     padding: 1rem 1.2rem;
     border-radius: var(--border-radius);
     background: rgba(var(--card-rgb), 0);
@@ -42,6 +41,7 @@
   vertical-align: middle;
   font-size: 1.2em;
 }
+
 @media (min-width: 610px) {
   .margin {
     margin: 0px;
@@ -58,7 +58,7 @@
     } 
 }
 /* Mobile */
-@media (max-width: 700px) {
+/*  @media (max-width: 700px) {
     .content {
       padding: 4rem;
     }
@@ -73,4 +73,4 @@
     .card {
       padding: 1rem 2.5rem;
     }
-}
+} */
