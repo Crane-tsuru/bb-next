@@ -1,3 +1,8 @@
+.margin {
+  min-height: 100vh;
+  background-color: white;
+}
+
 .link {
   color:blue;
   font-size: 1.7em;
@@ -7,19 +12,25 @@
   text-decoration: underline;
 }
 
-@media (min-width: 800px) {
-  .main {
-      width: 800px; 
-      margin: 0 auto;
-    }
+.title {
+  font-size: 2.5em;
+  color:darkblue;
+  
+ }
+
+.titleBox {
+  background-color: rgb(243, 221, 100);
+  padding: 10px;
+  text-align: center;
 }
+
 .main {
   max-width: 100%;
     margin: 10px 15px 10px 10px;
   }
-  
-  .title {
-    margin: 0px 5px 10px;
+
+  .blogtitle {
+    margin: 10px 5px 10px;
   }
   
   .publishedAt {
@@ -52,4 +63,32 @@
       list-style-type: decimal;
       list-style-position: inside;
     }
+  }
+
+  @media (min-width: 610px) { //大画面用
+    .margin {
+      margin: 0px;
+      min-height: 100vh;
+      background-color: rgb(228, 238, 238);
+    }
+  
+      .main {
+        width: 70%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: white;
+        min-height: 100vh;
+      } 
+
+      .blogtitle {
+        margin: 10px 30px 10px;
+      }
+      
+      .publishedAt {
+        margin: 0px 30px 30px;
+      }
+
+      .post {
+        margin: 0px 20px;
+      } 
   }
