@@ -14,16 +14,16 @@ export default function Blog({ blog }) {
         />
       </Head>
       <div className={classes.titleBox}>
+        <h1 className={classes.title}>Web班のブログ</h1>
         <Link className={classes.link} href="/">
           掲示板へ
         </Link>
-        <h1 className={classes.title}>Web班のブログ</h1>
       </div>
       <ul className={classes.main}>
         {blog.map((blog) => (
           <li className={classes.card} key={blog.id}>
             <div>
-              <Link className={classes.link} href={`/blog/${blog.id}`}>
+              <Link className={classes.postlink} href={`/blog/${blog.id}`}>
                 {blog.title}
               </Link>
               　

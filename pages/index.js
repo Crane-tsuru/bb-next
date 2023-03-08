@@ -177,10 +177,10 @@ export default function Home() {
         <meta name="google-site-verification" content="HU9359Egr_Y0kN-unK33sVKLYf1Ht5qwdVkh_ls5sRw" />
       </Head>
       <div className={classes.titleBox}>
+      <h2 className={classes.title}>C0de 掲示板 </h2>
       <Link className={classes.link} href="/blog">
         Web班のブログへ
       </Link>
-      <h2 className={classes.title}>C0de 掲示板 </h2>
       </div>
       <div className={classes.margin}>
       

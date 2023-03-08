@@ -23,10 +23,17 @@
 .link {
     color:blue;
     font-size: 1.7em;
+    text-decoration: underline;
 }
 
+.postlink {
+  color:blue;
+  font-size: 1.7em;
+}
+
+
 .link:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .card {
