@@ -118,7 +118,7 @@ export default function Home() {
           mydata.push(
             <div  className={classes.post}>
               <div>
-                名前:{doc.name}　
+                {doc.name}　
                 {new Date(doc.timestamp?.toDate()).toLocaleString()}　
                 <button onClick={() => ReplyBotton(doc.id, doc.index)}>
                   <span className={classes.button}>返信</span>
@@ -143,7 +143,7 @@ export default function Home() {
             mydata.push(
               <div className={classes.post}>
                 <div>
-                  ＞＞名前:{doc2.name}　
+                  ＞＞{doc2.name}　
                   {new Date(doc2.timestamp?.toDate()).toLocaleString()}　
                 </div>
                 <div>　　{doc2.text}</div>
