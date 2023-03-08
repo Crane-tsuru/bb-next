@@ -80,7 +80,7 @@ export default function Home() {
 
   //Firebaseに返信文を追加
   const addReplyText = (e) => {
-    if (name.length === 0 || text.length === 0) {
+    if (replyName.length === 0 || replyText.length === 0) {
       setMessage("未入力エラーです");
     } else {
       const ob = {
@@ -120,8 +120,8 @@ export default function Home() {
               <div>
                 {doc.name}　
                 {new Date(doc.timestamp?.toDate()).toLocaleString()}　
-                <button onClick={() => ReplyBotton(doc.id, doc.index)}>
-                  <span className={classes.button}>返信</span>
+                <button className={classes.button} onClick={() => ReplyBotton(doc.id, doc.index)}>
+                  返信
                 </button>
               </div>
               <div>{doc.text}</div>
@@ -252,7 +252,7 @@ export default function Home() {
           maxLength="400"
         />
       </p>
-      <button onClick={addText}><span className={classes.button}>投稿する</span></button>
+      <button className={classes.button} onClick={addText}>投稿する</button>
       </div>
     </div>
     </div>
