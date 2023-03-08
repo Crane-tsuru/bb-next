@@ -121,7 +121,7 @@ export default function Home() {
                 名前:{doc.name}　
                 {new Date(doc.timestamp?.toDate()).toLocaleString()}　
                 <button onClick={() => ReplyBotton(doc.id, doc.index)}>
-                  返信
+                  <span className={classes.button}>返信</span>
                 </button>
               </div>
               <div>{doc.text}</div>
@@ -222,7 +222,7 @@ export default function Home() {
               maxLength="400"
             />
           </p>
-          <button onClick={addReplyText}>返信する</button>
+          <button onClick={addReplyText} className={classes.button}>返信する</button>
 
           <table>
             <thead>
@@ -252,7 +252,7 @@ export default function Home() {
           maxLength="400"
         />
       </p>
-      <button onClick={addText}>投稿する</button>
+      <button onClick={addText}><span className={classes.button}>投稿する</span></button>
       </div>
     </div>
     </div>

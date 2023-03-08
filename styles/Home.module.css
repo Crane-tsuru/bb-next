@@ -339,3 +339,11 @@
     transform: rotate(0deg);
   }
 }
+<<<<<<< Updated upstream
+=======
+
+/* ボタン */
+.button:hover {
+  color: red;
+}
+>>>>>>> Stashed changes
