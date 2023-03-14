@@ -80,7 +80,7 @@ export default function Home() {
 
   //Firebaseに返信文を追加
   const addReplyText = (e) => {
-    if (name.length === 0 || text.length === 0) {
+    if (replyName.length === 0 || replyText.length === 0) {
       setMessage("未入力エラーです");
     } else {
       const ob = {
@@ -118,10 +118,10 @@ export default function Home() {
           mydata.push(
             <div  className={classes.post}>
               <div>
-                名前:{doc.name}　
+                {doc.name}　
                 {new Date(doc.timestamp?.toDate()).toLocaleString()}　
-                <button onClick={() => ReplyBotton(doc.id, doc.index)}>
-                  <span className={classes.button}>返信</span>
+                <button className={classes.button} onClick={() => ReplyBotton(doc.id, doc.index)}>
+                  返信
                 </button>
               </div>
               <div>{doc.text}</div>
@@ -143,7 +143,7 @@ export default function Home() {
             mydata.push(
               <div className={classes.post}>
                 <div>
-                  ＞＞名前:{doc2.name}　
+                  ＞＞{doc2.name}　
                   {new Date(doc2.timestamp?.toDate()).toLocaleString()}　
                 </div>
                 <div>　　{doc2.text}</div>
@@ -177,10 +177,10 @@ export default function Home() {
         <meta name="google-site-verification" content="HU9359Egr_Y0kN-unK33sVKLYf1Ht5qwdVkh_ls5sRw" />
       </Head>
       <div className={classes.titleBox}>
+      <h2 className={classes.title}>C0de 掲示板 </h2>
       <Link className={classes.link} href="/blog">
         Web班のブログへ
       </Link>
-      <h2 className={classes.title}>C0de 掲示板 </h2>
       </div>
       <div className={classes.margin}>
       
@@ -252,7 +252,7 @@ export default function Home() {
           maxLength="400"
         />
       </p>
-      <button onClick={addText}><span className={classes.button}>投稿する</span></button>
+      <button className={classes.button} onClick={addText}>投稿する</button>
       </div>
     </div>
     </div>

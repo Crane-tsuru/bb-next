@@ -10,11 +10,11 @@ export default function BlogId({ blog }) {
         <title>{blog.title}</title>
         <meta name="description" content="名工大プログラミング部C0deのWeb班のブログです。"  />
       </Head>
-      <div className={classes.titleBox}>
-        <Link className={classes.link} href="/blog">
+      <div className={classes.titleBox}>  
+      <h1 className={classes.title}>Web班のブログ</h1>
+      <Link className={classes.link} href="/blog">
         戻る
       </Link>
-      <h1 className={classes.title}>Web班のブログ</h1>
       </div>
       <div className={classes.main}>
       <h1 className={classes.blogtitle}>{blog.title}</h1>
