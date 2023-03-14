@@ -115,8 +115,9 @@ export default function Home() {
 
           index += 1;
 
-          mydata.push(
-            <div  className={classes.post}>
+          
+            mydata = [...prevdata, (
+            <div key={doc.timestamp} className={classes.post}>
               <div>
                 {doc.name}　
                 {new Date(doc.timestamp?.toDate()).toLocaleString()}　
@@ -126,7 +127,7 @@ export default function Home() {
               </div>
               <div>{doc.text}</div>
             </div>
-          );
+          )]
           if (!replyArray[index]) {
             replyArray[index] = 0;
           }
@@ -140,15 +141,16 @@ export default function Home() {
           snapshot2.forEach((document2) => {
             const doc2 = document2.data();
 
-            mydata.push(
-              <div className={classes.post}>
+            setData((prevdata) => {
+              return ([...prevdata, (
+              <div key={doc.timestamp} className={classes.post}>
                 <div>
                   ＞＞{doc2.name}　
                   {new Date(doc2.timestamp?.toDate()).toLocaleString()}　
                 </div>
                 <div>　　{doc2.text}</div>
               </div>
-            );
+            )])})
 
             if (replyArray[index]) { //replyArray[index]>=1の場合
               replyArray[index] += 1;
@@ -157,10 +159,10 @@ export default function Home() {
             }
           }); //forEach(document2)
 
-          setData(mydata); //mydataをdataに代入
+          setData(mydata);
           setAddIndex(index);
           setMessage("質問などあればお書きください");
-          setNum((prev) => prev + 1);
+        
         } //forEach(document)
       }); //snapshot
   }, [flag]);
