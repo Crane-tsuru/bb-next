@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { client } from "../libs/client";
-import classes from "../components/BlogList.module.css";
+import classes from "../components/BlogList.module.scss";
 
 export default function Blog({ blog }) {
   return (
