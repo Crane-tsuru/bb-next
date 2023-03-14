@@ -6,10 +6,11 @@ import Head from "next/head";
 import Link from "next/link";
 import classes from "../styles/Home.module.css";
 
-const db = firebase.firestore();
+
 
 export default function Home() {
   const mydata = [];
+  const db = firebase.firestore();
   let replyArray = [];
   let index = -1;
   let replyCount = 0;
