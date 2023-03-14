@@ -344,3 +344,12 @@
 .button:hover {
   color: red;
 }
+
+/* title space */
+.titleBox {
+  text-align: right;
+}
+
+.title {
+  text-align: center;
+}
